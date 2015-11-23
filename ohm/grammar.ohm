@@ -1,0 +1,42 @@
+O {
+  Problem
+    = numActors Claim*
+
+  Claim
+    = actor ':' Stmt
+
+  Stmt
+    = StmtBlock '.' Stmt    -- and
+    | StmtBlock '|' Stmt    -- or
+    | StmtBlock '>' Stmt    -- ifThen
+    | StmtBlock '#' Stmt    -- bicond
+    | StmtBlock
+
+  StmtBlock
+    = actor '=' role   -- role
+    | actor '=' actor  -- actor
+    | 'e' role         -- even
+    | 'o' role         -- odd
+    | num role         -- num
+    | actor 'm' actor  -- more
+    | actor 'l' actor  -- less
+    | '(' Stmt ')'     -- paren
+    | '-' Stmt         -- not
+
+  numActors
+    = '1' | '2' | '3' | '4' | '5' | '6' | '7'
+
+  actor
+    = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'
+
+  role
+    = 'K' | 'M' | 'V'
+
+  num
+    = '0' | numActors
+
+  op
+    = ':' | '=' | '(' | ')' | '-' | '.' | '|' | '>' | '#' | 'e' | 'o' | 'm' | 'l' | num
+
+  tokens = (actor | role | op | _)*
+}

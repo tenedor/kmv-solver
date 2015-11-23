@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/css/codemirror.css"></link>
+    <link rel="stylesheet" href="css/common.css"></link>
+    <link rel="stylesheet" href="css/tests.css"></link>
+    <link rel="stylesheet" href="css/playground.css"></link>
+
+    <script src="lib/js/helpers.js"></script>
+    <script src="lib/js/lang.js"></script>
+    <script src="lib/js/tests.js"></script>
+    <script src="lib/js/IndentingOutputStream.js"></script>
+    <script src="lib/js/playground.js"></script>
+    <script src="lib/js/beautify.js"></script>
+
+    <script src="lib/js/jquery-2.1.1.min.js"></script>
+    <script src="lib/js/underscore/underscore-1.7.0.min.js"></script>
+    <script src="lib/js/backbone/backbone-1.1.2.min.js"></script>
+    <script src="lib/js/codemirror.js"></script>
+
+    <script src="ohm/grammar.ohm" type="text/ohm-js"></script>
+    <script src="lib/js/ohm.min.js"></script>
+    <script src="js/ast-generator.js"></script>
+    <script src="js/prettyPrint.js"></script>
+    <script src="js/eval.js"></script>
+  </head>
+  <body>
+    <everything>
+    <section>
+      <div style="margin-left:100px">
+        <p>
+          On line 1, the number of islanders. On each subsequent line, a claim
+          of the form <span class="code">I: S</span>.
+        </p>
+        <p>
+          An islander <span class="code">I</span> is one of
+          <span class="code">A</span>,
+          <span class="code">B</span>,
+          <span class="code">C</span>,
+          <span class="code">D</span>,
+          <span class="code">E</span>,
+          <span class="code">F</span>,
+          <span class="code">G</span>.
+          A role <span class="code">R</span> is one of
+          <span class="code">K</span>,
+          <span class="code">M</span>,
+          <span class="code">V</span>.
+          A number <span class="code">N</span> is an integer between 0 and the
+          number of islanders. Create statements <span class="code">S</span>
+          from islanders, roles, and other statements using the following
+          syntax:
+        </p>
+        <ul>
+          <li><span class="code">I=R</span> // islander <span class="code">I</span> has role <span class="code">R</span></li>
+          <li><span class="code">I=I</span> // two islanders have the same role</li>
+          <li><span class="code">eR</span> // an even number of islanders have role <span class="code">R</span></li>
+          <li><span class="code">oR</span> // an odd number of islanders have role <span class="code">R</span></li>
+          <li><span class="code">NR</span> // <span class="code">N</span> islanders have role <span class="code">R</span></li>
+          <li><span class="code">ImI</span> // islander 1 speaks the truth more than islander 2</li>
+          <li><span class="code">IlI</span> // islander 1 speaks the truth less than islander 2</li>
+          <li><span class="code">(S)</span> // group one or more statements</li>
+          <li><span class="code">-S</span> // not S</li>
+          <li><span class="code">S.S</span> // and</li>
+          <li><span class="code">S|S</span> // or</li>
+          <li><span class="code">S&gt;S</span> // if-then</li>
+          <li><span class="code">S#S</span> // biconditional (if and only if)</li>
+        </ul>
+      </div>
+        <script>
+          insertPlayground(O, '3\nA: A=M');
+        </script>
+        </br>
+        <p style="margin-left:100px">
+          Find the code at <a href="https://github.com/tenedor/kmv-solver">
+          https://github.com/tenedor/kmv-solver</a>.
+        </p>
+      </section>
+    </everything>
+  </body>
+</html>
+
