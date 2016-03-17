@@ -28,8 +28,25 @@
     <section>
       <div style="margin-left:100px">
         <p>
+          <b>Knights, Knaves, and Monks - Puzzle Solver</b>
+        </p>
+        <p>
+          You are on the Island of Knights, Knaves, and Monks. Knights always
+          tell the truth, knaves always lie, and monks may say anything at all.
+          You encounter between 3 and 7 islanders, and fewer than half of them
+          are Monks. The islanders make some statements about each other. Can
+          you deduce what identity combinations are possible for this group?
+        </p>
+        <p>
+          Below is a puzzle solver. Enter a logical paraphrase of the
+          islanders's statements and it will output the set of possible islander
+          roles. Here is how you input a puzzle:
+        </p>
+        <p>
           On line 1, the number of islanders. On each subsequent line, a claim
-          of the form <span class="code">I: S</span>.
+          of the form <span class="code">I: S</span> signifying that islander
+          <span class="code">I</span> made statement
+          <span class="code">S</span>.
         </p>
         <p>
           An islander <span class="code">I</span> is one of
@@ -43,7 +60,7 @@
           A role <span class="code">R</span> is one of
           <span class="code">K</span>,
           <span class="code">M</span>,
-          <span class="code">V</span>.
+          <span class="code">V</span> (i.e. Knight, Monk, knaVe).
           A number <span class="code">N</span> is an integer between 0 and the
           number of islanders. Create statements <span class="code">S</span>
           from islanders, roles, and other statements using the following
